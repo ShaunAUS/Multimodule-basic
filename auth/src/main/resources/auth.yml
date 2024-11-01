@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: local
+
+jwt:
+  secret: 15924b2b079d94ca79ac6ab0231aa87d52ce4c38552354c0a9c4869857b4bc9e
+  access-token-expiration-time: 1800000  # 30분: 1000 * 60 * 30
+  refresh-token-expiration-time: 1209600000  # 2주: 1000 * 14 * 24 * 60 * 60
+  headers:
+    authorization: Authorization
+    refresh: Refresh
