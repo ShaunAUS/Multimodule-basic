@@ -18,15 +18,25 @@ import java.util.UUID
     ],
 )
 class BoardEntity(
-    @Column
-    var title: String,
-    @Column
-    var content: String,
-    @Column
-    var viewCount: Int = 0,
-    @Column(nullable = false, unique = true, updatable = false)
-    var uniqueId: String = UUID.randomUUID().toString(),
+    title: String,
+    content: String,
+    viewCount: Int = 0,
 ) : BaseEntity() {
+
+    @Column
+    var title: String = title
+        protected set
+
+    @Column
+    var content: String = content
+        protected set
+
+    @Column
+    var viewCount: Int = viewCount
+        protected set
+
+    @Column(nullable = false, unique = true, updatable = false)
+    val uniqueId: String = UUID.randomUUID().toString()
 
     companion object {
         fun of(createBoardDto: CreateBoardDto): BoardEntity {
