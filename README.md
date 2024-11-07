@@ -22,6 +22,7 @@
 ### AUTH
 
 - POST / : api/v1/auth/login => 로그인
+- POST / : api/v1/auth/logout => 로그아웃
 
 ### AUTH-TEST
 
