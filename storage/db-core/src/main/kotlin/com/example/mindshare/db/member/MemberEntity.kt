@@ -14,20 +14,36 @@ import java.util.UUID
 @Entity
 @Table(name = "member")
 class MemberEntity(
-    @Column
-    var password: String,
-    @Column
-    var name: String,
-    @Column
-    var age: Int,
-    @Column(unique = true)
-    var loginId: String,
-    @Column(nullable = false, unique = true, updatable = false)
-    var uniqueId: String = UUID.randomUUID().toString(),
-    @Column
-    var role: Int,
-
+    password: String,
+    name: String,
+    age: Int,
+    loginId: String,
+    role: Int,
 ) : BaseEntity() {
+
+    @Column
+    var password: String = password
+        protected set
+
+    @Column
+    var name: String = name
+        protected set
+
+    @Column
+    var age: Int = age
+        protected set
+
+    @Column(unique = true)
+    var loginId: String = loginId
+        protected set
+
+    @Column
+    var role: Int = role
+        protected set
+
+    @Column(nullable = false, unique = true, updatable = false)
+    var uniqueId: String = UUID.randomUUID().toString()
+
 
     companion object {
         fun of(createMemberDto: CreateMemberDto, encodedPassword: String?): MemberEntity {
