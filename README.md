@@ -37,6 +37,7 @@
 - Querydsl
 - mysql
 - Redis
+- Redisson
 - springSecurity
 
 
