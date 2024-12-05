@@ -7,8 +7,6 @@ dependencies {
     implementation("org.springframework:spring-tx:${property("springTxVersion")}")
     implementation("org.springframework.data:spring-data-commons")
     implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation ("org.redisson:redisson-spring-boot-starter:3.16.3")
-
 
     compileOnly("org.springframework:spring-context")
 }
