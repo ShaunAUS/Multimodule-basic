@@ -9,8 +9,11 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 class RedissonConfig(
-    @Value("\${spring.redis.host}") private val redisHost: String,
-    @Value("\${spring.redis.port}") private val redisPort: Int
+    @Value("\${spring.redis.host}")
+    private val redisHost: String,
+
+    @Value("\${spring.redis.port}")
+    private val redisPort: Int,
 ) {
     companion object {
         private const val REDISSON_HOST_PREFIX = "redis://"

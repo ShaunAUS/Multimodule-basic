@@ -5,6 +5,7 @@ spring:
     import:
       - db-core.yml
       - auth.yml
+      - redisson.yml
   web:
     resources:
       add-mappings: false
